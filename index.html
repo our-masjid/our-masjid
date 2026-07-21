@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>मस्जिद तामीर फंड</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading screen while JSON is fetched -->
+    <div id="loadingView" class="loading">जानकारी लोड हो रही है, कृपया प्रतीक्षा करें...</div>
+
+    <!-- Main Responsive Webpage Content -->
+    <div id="mainContent" style="display: none;">
+        
+        <header>
+            <h1 id="mosqueName">मस्जिद फंड</h1>
+            <p id="tagline"></p>
+        </header>
+
+        <div class="main-container">
+            
+            <!-- Appeal Section & Progress Bar -->
+            <div class="card appeal-card">
+                <h2 id="appealTitle"></h2>
+                <div id="appealParagraphs"></div>
+                
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>काम की प्रगति (Progress)</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar-outer">
+                        <div id="progressBar" class="progress-bar-inner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Mapping -->
+            <div class="card">
+                <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">📍 मस्जिद का पता:</h2>
+                <p id="mosqueAddress" style="font-size: 0.95rem; opacity: 0.85;"></p>
+                <a id="mapLink" href="#" target="_blank" class="map-btn">📍 गूगल मैप पर देखें</a>
+            </div>
+
+            <!-- Material Support Section -->
+            <div class="section-title">🏗️ ज़रूरी सामान (दान के लिए)</div>
+            <div class="card">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">अगर आप पैसों की जगह सीधे कंस्ट्रक्शन का सामान देना चाहते हैं:</p>
+                <ul id="materialList" class="material-list"></ul>
+            </div>
+
+            <!-- Project Images Stack -->
+            <div class="section-title">📷 तामीर के काम की तस्वीरें</div>
+            <div class="photo-stack" id="photoStack"></div>
+
+            <!-- Smart UPI QR Transfer Panel -->
+            <div class="section-title">💰 सीधे ट्रांसफर करें</div>
+            <div class="card payment-box">
+                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">इस QR कोड का स्क्रीनशॉट लेकर किसी भी ऐप से पे करें</span>
+                <div class="qr-holder">
+                    <img id="qrImage" src="" alt="Payment QR Code">
+                </div>
+
+                <div class="upi-row">
+                    <div>
+                        <div class="upi-label">मस्जिद UPI ID</div>
+                        <div class="upi-value" id="upiAddress">loading...</div>
+                    </div>
+                    <button class="mini-btn" onclick="copyUpiId()">कॉपी</button>
+                </div>
+
+                <div class="upi-row" style="background: var(--upi-row-bg);">
+                    <div>
+                        <div class="upi-label">अकाउंट नाम</div>
+                        <div class="upi-value" id="accountName" style="font-size:0.95rem;">loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>© 2026 <span class="footer-name"></span> कमेटी। <br>अल्लाह आपकी खैरात कबूल फरमाए। आमीन।</p>
+            </footer>
+        </div>
+
+        <!-- Static Sticky Mobile Pay Trigger Bar -->
+        <div class="action-bar">
+            <a id="payBtn" href="#" class="pay-trigger-btn">📱 सीधे पेमेंट ऐप खोलें</a>
+        </div>
+    </div>
+
+    <!-- External JavaScript link -->
+    <script src="app.js"></script>
+</body>
+</html>

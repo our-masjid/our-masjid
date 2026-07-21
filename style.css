@@ -1,0 +1,108 @@
+/* DESIGN SYSTEM & AUTOMATIC THEMES */
+:root {
+    --bg-main: #f4f7f5;
+    --bg-card: #ffffff;
+    --header-grad: linear-gradient(135deg, #0b4629, #11683d);
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --accent: #c5a059;
+    --border: #e2e8f0;
+    --upi-row-bg: #f8fafc;
+    --shadow: rgba(0, 0, 0, 0.05);
+    --action-bar-bg: #ffffff;
+    --progress-bg: #e2e8f0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #121814;
+        --bg-card: #1a231e;
+        --header-grad: linear-gradient(135deg, #072a19, #0d4428);
+        --text-main: #e2e8f0;
+        --text-muted: #a0aec0;
+        --accent: #e5c17d;
+        --border: #2d3748;
+        --upi-row-bg: #222d27;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --action-bar-bg: #1a231e;
+        --progress-bg: #2d3748;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-bottom: 95px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-grad);
+    color: white;
+    text-align: center;
+    padding: 45px 20px 60px 20px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+header p { font-size: 0.95rem; max-width: 320px; margin: 0 auto; line-height: 1.4; color: var(--accent); font-weight: 500; font-style: italic; }
+
+.main-container { padding: 0 16px; margin-top: -35px; }
+
+.card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 8px 24px var(--shadow);
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+}
+
+.appeal-card h2, .section-title { font-size: 1.2rem; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
+.section-title { margin: 24px 4px 12px; color: var(--text-main); }
+.appeal-card p { font-size: 0.95rem; margin-bottom: 12px; text-align: justify; opacity: 0.95; }
+
+/* Progress Bar */
+.progress-container { margin-top: 15px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
+.progress-bar-outer { background: var(--progress-bg); height: 12px; border-radius: 6px; overflow: hidden; }
+.progress-bar-inner { background: #22c55e; height: 100%; width: 0%; transition: width 1s ease-in-out; }
+
+/* Materials List */
+.material-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; margin-top: 10px; }
+.material-list li { background: var(--upi-row-bg); padding: 10px; border-radius: 10px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--border); display: flex; align-items: center; gap: 6px; }
+
+/* Photo Stack */
+.photo-stack { display: flex; flex-direction: column; gap: 16px; }
+.photo-card { background: var(--bg-card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.photo-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.photo-card .label { padding: 12px 14px; font-size: 0.9rem; font-weight: 600; }
+
+/* Payment Box */
+.payment-box { text-align: center; }
+.qr-holder { background: #ffffff; padding: 12px; border-radius: 16px; display: inline-block; margin: 16px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.qr-holder img { width: 170px; height: 170px; display: block; }
+.upi-row { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; margin-top: 12px; text-align: left; }
+.upi-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+.upi-value { font-size: 1rem; font-weight: 700; color: var(--text-main); word-break: break-all; }
+
+.mini-btn, .map-btn { background: var(--accent); color: #121814; border: none; padding: 7px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; text-decoration: none; }
+.map-btn { display: inline-block; margin-top: 8px; background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+
+/* Sticky Action Bar */
+.action-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--action-bar-bg); padding: 12px 16px; box-shadow: 0 -4px 20px var(--shadow); display: flex; justify-content: center; z-index: 999; border-top: 1px solid var(--border); }
+.pay-trigger-btn { width: 100%; max-width: 500px; background: #22c55e; color: white; text-align: center; padding: 14px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3); }
+
+footer { text-align: center; padding: 24px 0 12px; font-size: 0.8rem; color: var(--text-muted); }
+.loading { text-align: center; padding: 50px 20px; font-size: 1.2rem; font-weight: 600; color: var(--text-main); }
