@@ -1,6 +1,6 @@
 {
   "mosqueName": "हमारी मस्जिद",
-  "tagline": "",
+  "tagline": " ",
   "address": "रोशन पुर मोहल्ला, कस्बा सूरजपुर, तहसील घोसी, जिला मऊ",
   "mapLink": "#",
   "progressPercentage": 35,
@@ -20,20 +20,32 @@
   },
   "materialsNeeded": [
     "सीमेंट (Cement)",
-    "ईंटें (Bricks)",
+    "ईंटें (Brick)",
     "सरिया / लोहा (Steel)",
     "रेत / बालू (Sand)"
   ],
   "photos": [
-    { "src": "pahle.jpg", "fallback": "https://unsplash.com", "label": "1. पुरानी जर्जर मस्जिद की स्थिति (हादसे का डर था)" },
-    { "src": "phir.jpg", "fallback": "https://unsplash.com", "label": "2. मेहराब,मीनार और दरवाज़े का हालिया काम चालू" },
-       { "src": "ab.jpg", "fallback": "https://unsplash.com", "label": "3. मेहराब, मीनार और ददरवाज़े का हालिया स्थिति" }
+    {
+      "src": "pahle.jpg",
+      "fallback": "https://unsplash.com",
+      "label": "1. पुरानी जर्जर मस्जिद की स्थिति (हादसे का डर था)"
+    },
+    {
+      "src": "phir.jpg",
+      "fallback": "https://unsplash.com",
+      "label": "2. मेहराब,मीनार और दरवाज़े का हालिया काम चालू"
+    },
+    {
+      "src": "ab.jpg",
+      "fallback": "https://unsplash.com",
+      "label": "3. मेहराब, मीनार और ददरवाज़े का हालिया स्थिति"
+    }
   ],
   "payment": {
     "upiId": "9026162225@axl",
     "accountName": "Moin Akhtar",
     "qrImage": "qr.png",
-    "fallbackQrUrl": "https://qrserver.com"
+    "fallbackQrUrl": "https://qrserver.com{currentData.payment.upiId}%26pn=Moin%20Akhtar%26cu=INR"
   },
   "manager": {
     "name": "मोइन अख़्तर (मुतावल्ली)",
