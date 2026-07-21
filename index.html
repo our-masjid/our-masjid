@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>मस्जिद तामीर फंड</title>
-    <!-- External CSS link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Loading screen while JSON is fetched -->
+    <!-- Loading State View -->
     <div id="loadingView" class="loading">जानकारी लोड हो रही है, कृपया प्रतीक्षा करें...</div>
 
-    <!-- Main Responsive Webpage Content -->
+    <!-- Main View Panel -->
     <div id="mainContent" style="display: none;">
         
         <header>
@@ -22,12 +21,15 @@
 
         <div class="main-container">
             
-            <!-- Appeal Section & Progress Bar -->
+            <!-- Appeal Card -->
             <div class="card appeal-card">
                 <h2 id="appealTitle"></h2>
                 <div id="appealParagraphs"></div>
                 
-                <div class="progress-container">
+                <!-- Highlighted Verification Note -->
+                <div id="verificationNote" class="verify-badge-box"></div>
+                
+                <div class="progress-container" style="margin-top: 20px;">
                     <div class="progress-label">
                         <span>काम की प्रगति (Progress)</span>
                         <span id="progressText">0%</span>
@@ -38,28 +40,42 @@
                 </div>
             </div>
 
-            <!-- Address Mapping -->
+            <!-- Hadith Card Element -->
+            <div class="card hadith-card">
+                <div id="hadithArabic" class="hadith-arabic"></div>
+                <div id="hadithText" class="hadith-text"></div>
+                <div id="hadithRef" class="hadith-ref"></div>
+            </div>
+
+            <!-- Address Mapping Box -->
             <div class="card">
                 <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">📍 मस्जिद का पता:</h2>
                 <p id="mosqueAddress" style="font-size: 0.95rem; opacity: 0.85;"></p>
                 <a id="mapLink" href="#" target="_blank" class="map-btn">📍 गूगल मैप पर देखें</a>
             </div>
 
-            <!-- Material Support Section -->
-            <div class="section-title">🏗️ ज़रूरी सामान (दान के लिए)</div>
+            <!-- Material Requirements Box -->
+ <div class="section-title">🏗️ ज़रूरी सामान (दान के लिए)</div>
             <div class="card">
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">अगर आप पैसों की जगह सीधे कंस्ट्रक्शन का सामान देना चाहते हैं:</p>
                 <ul id="materialList" class="material-list"></ul>
+              <div style="margin-top: 15px; border-top: 1px dashed var(--border); padding-top: 15px; text-align: center;">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">सामान भेजने या उसकी गाड़ी बुक कराने के लिए नीचे क्लिक करके सीधे बात करें:</p>
+                    <a id="materialContactBtn" href="#" target="_blank" class="whatsapp-btn" style="background: #128C7E; width: 100%; justify-content: center;">
+                        📞 सामान दान के लिए संपर्क करें
+                    </a>
+              </div>
             </div>
 
-            <!-- Project Images Stack -->
+            <!-- Gallery Stack Images Section -->
             <div class="section-title">📷 तामीर के काम की तस्वीरें</div>
             <div class="photo-stack" id="photoStack"></div>
 
-            <!-- Smart UPI QR Transfer Panel -->
+            <!-- Dynamic QR Payment Methods Box -->
             <div class="section-title">💰 सीधे ट्रांसफर करें</div>
             <div class="card payment-box">
-                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">इस QR कोड का स्क्रीनशॉट लेकर किसी भी ऐप से पे करें</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 499;">इस QR कोड का स्क्रीनशॉट लेकर किसी भी ऐप से पे करें</span>
+                
                 <div class="qr-holder">
                     <img id="qrImage" src="" alt="Payment QR Code">
                 </div>
@@ -80,18 +96,38 @@
                 </div>
             </div>
 
+            <!-- Supervisor Profile Contact Panel Card -->
+            <div class="section-title">👤 देखरेख और संपर्क</div>
+            <div class="card manager-card">
+                <img id="managerPhoto" src="" alt="Manager Profile" class="manager-avatar">
+                <div class="manager-info">
+                    <div id="managerName" class="manager-name">loading...</div>
+                    <p id="managerBio" class="manager-bio"></p>
+                    <a id="whatsappLink" href="#" target="_blank" class="whatsapp-btn">
+                        💬 व्हाट्सएप पर संपर्क करें
+                    </a>
+                </div>
+            </div>
+
             <footer>
                 <p>© 2026 <span class="footer-name"></span> कमेटी। <br>अल्लाह आपकी खैरात कबूल फरमाए। आमीन।</p>
             </footer>
         </div>
 
-        <!-- Static Sticky Mobile Pay Trigger Bar -->
+        <!-- Sticky Floating Bottom Mobile Trigger CTA -->
         <div class="action-bar">
-            <a id="payBtn" href="#" class="pay-trigger-btn">📱 सीधे पेमेंट ऐप खोलें</a>
+            <a id="payBtn" href="upi://pay?pa=9026162225@axl&pn=MOIN%20%20AKHTAR&mc=0000&mode=02&purpose=00" class="pay-trigger-btn">📱 सीधे पेमेंट ऐप खोलें</a>
         </div>
     </div>
 
-    <!-- External JavaScript link -->
+    <!-- Image Expansion Pop-up View overlay -->
+    <div id="imageModal" class="image-popup-modal" onclick="closeImagePopup()">
+        <span class="popup-close-btn">&times;</span>
+        <img class="popup-image-content" id="modalTargetImg" alt="Full Screen Zoom View">
+        <div id="modalCaption" class="popup-caption"></div>
+    </div>
+
+    <!-- External Script Execution logic reference -->
     <script src="app.js"></script>
 </body>
 </html>
