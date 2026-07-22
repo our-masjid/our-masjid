@@ -14,8 +14,52 @@
     <meta property="og:image:height" content="630">
 
 </head>
-<body>
+    <style>
+    .payment-notice {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        
+        /* आपकी थीम के वैरियेबल्स */
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px var(--shadow);
+        
+        font-family: system-ui, -apple-system, sans-serif;
+        transition: all 0.3s ease;
+    }
 
+    .notice-icon {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .notice-content {
+        /* आपकी थीम के टेक्स्ट वैरियेबल्स */
+        color: var(--text-main);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .notice-content strong {
+        color: var(--accent); /* हाईलाइट करने के लिए */
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+</style>
+<body>
+<div class="payment-notice">
+    <div class="notice-icon">⚠️</div>
+    <div class="notice-content">
+        <strong>पेमेंट गेटवे अपडेट सूचना:</strong> वेबसाइट पर पेमेंट गेटवे का काम चल रहा है। तब तक भुगतान के लिए कृपया क्यूआर कोड स्कैन करें या सीधे हमारी यूपीआई आईडी का उपयोग करें।
+    </div>
+</div>
     <!-- Loading State View -->
     <div id="loadingView" class="loading">जानकारी लोड हो रही है, कृपया प्रतीक्षा करें...</div>
 
