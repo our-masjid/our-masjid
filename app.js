@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('data.json')
+    fetch(`data.json?v=${Date.now()}`)
         .then(response => {
             if (!response.ok) throw new Error('JSON फाइल लोड नहीं हो पाई');
             return response.json();
