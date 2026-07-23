@@ -44,7 +44,7 @@
   "payment": {
     "upiId": "9026162225@axl",
     "accountName": "Moin Akhtar",
-    "qrImage": "1784828642506.jpg",
+    "qrImage": "1784828738957.png",
     "fallbackQrUrl": "https://qrserver.com{currentData.payment.upiId}%26pn=Moin%20Akhtar%26cu=INR"
   },
   "manager": {
