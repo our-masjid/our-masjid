@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             qrImgEl.src = data.payment.qrImage;
             qrImgEl.onerror = () => { qrImgEl.src = data.payment.fallbackQrUrl; };
 
-            const upiDeepLink = `upi://pay?pa=${data.payment.upiId}&pn=${encodeURIComponent(data.payment.accountName)}&cu=INR`;
+            const upiDeepLink = `upi://pay?pa=${data.payment.upiId}&pn=${encodeURIComponent(data.payment.accountName)}&mc=0000&mode=02&cu=INR`;
             document.getElementById("payBtn").href = upiDeepLink;
 
             // 9. देखरेख प्रबंधक प्रोफाइल संपर्क
