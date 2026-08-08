@@ -1,185 +1,276 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>मस्जिद तामीर फंड</title>
-    <link rel="stylesheet" href="style.css">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="🕌 मस्जिद तामीर फंड - एक नेक अपील">
-    <meta property="og:description" content="पुरानी जर्जर इमारत को हटाकर अल्लाह का घर दोबारा तामीर किया जा रहा है। अपनी हैसियत के मुताबिक दिल खोलकर माली इमदाद करें।">
-    <!-- यहाँ अपनी मस्जिद की मुख्य तस्वीर का पूरा लाइव लिंक डालें (जैसे https://yourwebsite.com) -->
-    <meta property="og:image" content="https://raw.githubusercontent.com/our-masjid/our-masjid/refs/heads/main/meta.jpg"> 
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Notice</title>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f6f8fa;
+  color: #24292f;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+/* Card */
+
+.notice-card {
+  width: 100%;
+  max-width: 520px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8dee4;
+  border-left: 4px solid #cf222e;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 14px rgba(31, 35, 40, 0.06);
+}
+
+/* Header */
+
+.notice-header {
+  padding: 16px 18px 13px;
+
+  border-bottom: 1px solid #eaeef2;
+}
+
+.notice-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon */
+
+.icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffebe9;
+  color: #cf222e;
+
+  font-size: 16px;
+}
+
+/* Title */
+
+.title {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: #24292f;
+}
+
+/* Metadata */
+
+.meta {
+  margin-top: 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  font-size: 11px;
+  color: #6e7781;
+}
+
+.meta span {
+  padding-right: 7px;
+
+  border-right: 1px solid #d8dee4;
+}
+
+.meta span:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+/* Body */
+
+.notice-body {
+  padding: 17px 18px 18px;
+}
+
+.notice-label {
+  margin-bottom: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #cf222e;
+}
+
+.notice-text {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: #424a53;
+}
+
+.notice-text + .notice-text {
+  margin-top: 9px;
+}
+
+/* Small warning box */
+
+.notice-warning {
+  margin-top: 14px;
+  padding: 10px 12px;
+
+  background: #fff8f7;
+
+  border: 1px solid #ffcccb;
+  border-radius: 6px;
+
+  color: #57606a;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Footer */
+
+.notice-footer {
+  padding: 10px 18px;
+
+  background: #f6f8fa;
+
+  border-top: 1px solid #eaeef2;
+
+  color: #6e7781;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .notice-card {
+    max-width: 100%;
+  }
+
+  .notice-header {
+    padding: 14px 15px 12px;
+  }
+
+  .notice-body {
+    padding: 15px;
+  }
+
+  .notice-footer {
+    padding: 9px 15px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .notice-text {
+    font-size: 13.5px;
+  }
+}
+  </style>
 </head>
-    <style>
-    .payment-notice {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 16px;
-        display: none;
-        align-items: flex-start;
-        gap: 12px;
-        
-        /* आपकी थीम के वैरियेबल्स */
-        background-color: var(--bg-card);
-        border: 1px solid var(--border);
-        border-left: 4px solid var(--accent);
-        border-radius: 8px;
-        box-shadow: 0 4px 12px var(--shadow);
-        
-        font-family: system-ui, -apple-system, sans-serif;
-        transition: all 0.3s ease;
-    }
 
-    .notice-icon {
-        font-size: 20px;
-        line-height: 1;
-    }
-
-    .notice-content {
-        /* आपकी थीम के टेक्स्ट वैरियेबल्स */
-        color: var(--text-main);
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .notice-content strong {
-        color: var(--accent); /* हाईलाइट करने के लिए */
-        display: block;
-        margin-bottom: 4px;
-        font-weight: 600;
-    }
-</style>
 <body>
-<div class="payment-notice">
-    <div class="notice-icon">⚠️</div>
-    <div class="notice-content">
-        <strong>पेमेंट गेटवे अपडेट सूचना:</strong> वेबसाइट पर पेमेंट गेटवे का काम चल रहा है। तब तक भुगतान के लिए कृपया क्यूआर कोड स्कैन करें या सीधे हमारी यूपीआई आईडी का उपयोग करें।
-    </div>
-</div>
-    <!-- Loading State View -->
-    <div id="loadingView" class="loading">जानकारी लोड हो रही है, कृपया प्रतीक्षा करें...</div>
 
-    <!-- Main View Panel -->
-    <div id="mainContent" style="display: none;">
-        
-        <header>
-            <h1 id="mosqueName">मस्जिद फंड</h1>
-            <p id="tagline"></p>
-        </header>
+  <div class="notice-card">
 
-        <div class="main-container">
-            
-            <!-- Appeal Card -->
-            <div class="card appeal-card">
-                <h2 id="appealTitle"></h2>
-                <div id="appealParagraphs"></div>
-                
-                <!-- Highlighted Verification Note -->
-                <div id="verificationNote" class="verify-badge-box"></div>
-                
-                <div class="progress-container" style="margin-top: 20px;">
-                    <div class="progress-label">
-                        <span>काम की प्रगति (Progress)</span>
-                        <span id="progressText">0%</span>
-                    </div>
-                    <div class="progress-bar-outer">
-                        <div id="progressBar" class="progress-bar-inner"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Header -->
+    <div class="notice-header">
 
-            <!-- Hadith Card Element -->
-            <div class="card hadith-card">
-                <div id="hadithArabic" class="hadith-arabic"></div>
-                <div id="hadithText" class="hadith-text"></div>
-                <div id="hadithRef" class="hadith-ref"></div>
-            </div>
+      <div class="notice-top">
 
-            <!-- Address Mapping Box -->
-            <div class="card">
-                <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">📍 मस्जिद का पता:</h2>
-                <p id="mosqueAddress" style="font-size: 0.95rem; opacity: 0.85;"></p>
-                <a id="mapLink" href="#" target="_blank" class="map-btn">📍 गूगल मैप पर देखें</a>
-            </div>
+        <div class="icon"><img src="https://i.ibb.co/5PMmHxq/warning-1.png"></div>
 
-            <!-- Material Requirements Box -->
- <div class="section-title">🏗️ ज़रूरी सामान (दान के लिए)</div>
-            <div class="card">
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">अगर आप पैसों की जगह सीधे कंस्ट्रक्शन का सामान देना चाहते हैं:</p>
-                <ul id="materialList" class="material-list"></ul>
-              <div style="margin-top: 15px; border-top: 1px dashed var(--border); padding-top: 15px; text-align: center;">
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">सामान भेजने के लिए नीचे क्लिक करके सीधे बात करें:</p>
-                    <a id="materialContactBtn" href="#" target="_blank" class="whatsapp-btn" style="background: #128C7E; width: 100%; justify-content: center;">
-                        📞 सामान दान के लिए संपर्क करें
-                    </a>
-              </div>
-            </div>
+        <h1 class="title">
+          Important Notice
+        </h1>
 
-            <!-- Gallery Stack Images Section -->
-            <div class="section-title">📷 तामीर के काम की तस्वीरें</div>
-            <div class="photo-stack" id="photoStack"></div>
+      </div>
 
-            <!-- Dynamic QR Payment Methods Box -->
-            <div class="section-title">💰 सीधे ट्रांसफर करें</div>
-            <div class="card payment-box">
-                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500; display: block;">इस QR कोड का स्क्रीनशॉट लेकर किसी भी ऐप से पे करें</span>
-                
-                <div class="qr-holder">
-                    <img id="qrImage" src="" alt="Payment QR Code">
-                </div>
+      <!-- Metadata -->
+      <div class="meta">
+        <span>Payment</span>
+        <span>Notice ID: 13482845300</span>
+        <span>08 Aug 2026 1:30 PM</span>
+      </div>
 
-                <div class="upi-row">
-                    <div>
-                        <div class="upi-label">मस्जिद UPI ID</div>
-                        <div class="upi-value" id="upiAddress">loading...</div>
-                    </div>
-                    <button class="mini-btn" onclick="copyUpiId()">कॉपी</button>
-                </div>
-
-                <div class="upi-row" style="background: var(--upi-row-bg);">
-                    <div>
-                        <div class="upi-label">अकाउंट नाम</div>
-                        <div class="upi-value" id="accountName" style="font-size:0.95rem;">loading...</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Supervisor Profile Contact Panel Card -->
-            <div class="section-title">👤 देखरेख और संपर्क</div>
-            <div class="card manager-card">
-                <img id="managerPhoto" src="" alt="Manager Profile" class="manager-avatar">
-                <div class="manager-info">
-                    <div id="managerName" class="manager-name">loading...</div>
-                    <p id="managerBio" class="manager-bio"></p>
-                    <a id="whatsappLink" href="#" target="_blank" class="whatsapp-btn">
-                        💬 व्हाट्सएप पर संपर्क करें
-                    </a>
-                </div>
-            </div>
-
-            <footer>
-                <p>© 2026 <span class="footer-name"></span> कमेटी। <br>अल्लाह आपकी खैरात कबूल फरमाए। आमीन।</p>
-            </footer>
-        </div>
-
-        <!-- Sticky Floating Bottom Mobile Trigger CTA -->
-        <div class="action-bar">
-            <a id="payBtn" href="upi://pay?pa=6391226574@mbk&pn=Mohammad Shammon&mc=0000&mode=02&cu=INR" class="pay-trigger-btn">📱 सीधे पेमेंट ऐप खोलें</a>
-        </div>
     </div>
 
-    <!-- Image Expansion Pop-up View overlay -->
-    <div id="imageModal" class="image-popup-modal" onclick="closeImagePopup()">
-        <span class="popup-close-btn">&times;</span>
-        <img class="popup-image-content" id="modalTargetImg" alt="Full Screen Zoom View">
-        <div id="modalCaption" class="popup-caption"></div>
+
+    <!-- Notice -->
+    <div class="notice-body">
+
+      <div class="notice-label">
+        Notice
+      </div>
+
+      <p class="notice-text">
+        This is not required NPCI condition.
+      </p>
+
+      <p class="notice-text">
+        Payment apps automatically block malformed or non-compliant intent deep links (such as custom unverified schemes or missing transaction parameters) to prevent intent-spoofing and QR-swap scams.
+      </p>
+
     </div>
 
-    <!-- External Script Execution logic reference -->
-    <script src="app.js"></script>
+
+    <!-- Footer -->
+    <div class="notice-footer">
+      Related bank account is not available to take payment from here.
+    </div>
+
+  </div>
+
 </body>
 </html>
